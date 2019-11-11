@@ -63,7 +63,9 @@ class SleepTrackerViewModel(
 
     private var tonight = MutableLiveData<SleepNight?>()
 
-    private val nights = database.getAllNights()
+//    private val nights = database.getAllNights()
+
+    val nights = database.getAllNights()
 
     /**
      * Converted nights to Spanned for displaying.
@@ -100,6 +102,8 @@ class SleepTrackerViewModel(
      * This is private because we don't want to expose setting this value to the Fragment.
      */
     private var _showSnackbarEvent = MutableLiveData<Boolean?>()
+
+
 
     /**
      * If this is true, immediately `show()` a toast and call `doneShowingSnackbar()`.
